@@ -1,19 +1,19 @@
 
 🛡️ **FUSIP** is a **Python**-based tool designed for professionals to train and test IP vulnerabilities, featuring IP scanning and DDOS attack functionalities. FUSIP empowers users to analyze IP addresses, generate images with embedded scripts, and execute DDOS attacks for educational and testing purposes.
 
-## Features
+## Features 👀
 
-**1. IP Scan (IPv4 only)**
+**1. IP Scan (IPv4 only)** 🤖
    - Conduct detailed analysis of IPv4 addresses.
    - Retrieve information including country, city, latitude, longitude, and Internet Service Provider (ISP).
    - Utilizes the IPInfo.io API for accurate data retrieval.
 
-**2. IP DDOS (Distributed Denial of Service)**
+**2. IP DDOS (Distributed Denial of Service)** ☠️
    - Perform simulated DDOS attacks on specified IP addresses.
    - Specify the number of connections to establish, creating a distributed attack scenario.
    - Utilizes multi-threading to efficiently establish connections.
 
-**3. IP Grabber**
+**3. IP Grabber** 🎯
    - Generate images with embedded scripts to obscure malicious content.
    - Utilizes Piexif library to embed script content in image metadata.
    - Users can rename the generated image for further deployment.
@@ -71,5 +71,6 @@ To install the required dependencies for running FUSIP, follow these steps:
    ```
 
 
-Enjoy <3
+Enjoy 😘
+
 
