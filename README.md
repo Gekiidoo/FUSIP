@@ -73,7 +73,7 @@ To install the required dependencies for running FUSIP, follow these steps:
 
 **5. Run FUSIP**
    ```bash
-   python fusip.py
+   python FUSIP.py
    ```
 
 Enjoy 😘
