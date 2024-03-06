@@ -46,7 +46,7 @@ To install the required dependencies for running FUSIP, follow these steps:
 
 **1. Clone the GitHub repository:**
    ```bash
-   git clone https://github.com/your-username/FUSIP.git
+   git clone https://github.com/Gekiidoo/FUSIP.git
    ```
 
 **2. Navigate to the FUSIP directory:**
