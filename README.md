@@ -58,6 +58,12 @@ To install the required dependencies for running FUSIP, follow these steps:
    ```bash
    pip install -r requirements.txt
    ```
+**if you have any error with the requirements.txt , you can do this instead**
+```bash
+   pip install Pillow
+   pip install pyfiglet
+   pip install requests
+```
 
    Make sure to run this command in a Python virtual environment if necessary.
 
@@ -70,12 +76,6 @@ To install the required dependencies for running FUSIP, follow these steps:
    python fusip.py
    ```
 
-**if you have any error with the requirements.txt , you can do this instead**
-```bash
-   pip install Pillow
-   pip install pyfiglet
-   pip install requests
-```
 Enjoy 😘
 
 
