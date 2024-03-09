@@ -63,6 +63,7 @@ To install the required dependencies for running FUSIP, follow these steps:
    pip install Pillow
    pip install pyfiglet
    pip install requests
+   pip install piexif
 ```
 
    Make sure to run this command in a Python virtual environment if necessary.
