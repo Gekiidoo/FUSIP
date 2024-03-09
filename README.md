@@ -76,6 +76,7 @@ To install the required dependencies for running FUSIP, follow these steps:
    python FUSIP.py
    ```
 
+**if you want any help , join my discord : https://discord.gg/SrJgUTQcAH**
 Enjoy 😘
 
 
