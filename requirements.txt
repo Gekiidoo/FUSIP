@@ -1,3 +1,4 @@
 pyfiglet==0.8.post1
 Pillow==9.0.0
 requests==2.26.0
+piexif
