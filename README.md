@@ -87,12 +87,12 @@ Enjoy 😘
 
 ## Fonctionnalités 👀
 
-**1. Balayage IP (IPv4 uniquement)** 🤖
+**1. Analyse IP (IPv4 uniquement)** 🤖
    - Effectuez une analyse détaillée des adresses IPv4.
    - Récupérez des informations telles que le pays, la ville, la latitude, la longitude et le fournisseur de services Internet (ISP).
    - Utilise l'API IPInfo.io pour une récupération précise des données.
 
-**2. IP DDOS (Déni de service distribué)** ☠️
+**2. IP DDOS** ☠️
    - Effectuez des attaques DDOS simulées sur des adresses IP spécifiées.
    - Spécifiez le nombre de connexions à établir, créant ainsi un scénario d'attaque distribuée.
    - Utilise le multithreading pour établir efficacement des connexions.
